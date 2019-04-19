@@ -27,4 +27,13 @@ Route::get('goi-include', function(){
 	return view('include');
 });
 
+Route::get('goi-dang-nhap', function(){
+	return view('dang-nhap/form-dang-nhap');
+});
+
+Route::post('goi-dang-nhap', function(){
+	return view('dang-nhap/form-dang-nhap');
+});
+
+
 

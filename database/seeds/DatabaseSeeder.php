@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-      	DB::table('abc')->insert([
+      	DB::table('thanhvien')->insert([
       		array('username'=>'admin', 'password'=>'123456'),
       		array('username'=>'tai', 'password'=>'123456'),
       		array('username'=>'hao', 'password'=>'123456'),
