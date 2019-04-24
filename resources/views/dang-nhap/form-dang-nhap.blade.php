@@ -1,18 +1,3 @@
-@php 
-	ob_start();
-	session_start();
-	$login = 1;
-	if(isset($_GET['login']))
-	{
-		$login = $_GET['login'];
-	}
-	if(isset($_GET['dangxuat']))
-	{
-		session_unset();
-		session_destroy();
-	}
-@endphp
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,18 +30,8 @@
 					</tr>
 				</table>
 			</form>	 <br />
-			@if($login == 0) 
-				<p style='color:red'> Usename or password wrong!<p> 
-			@endif
+			
 		</div>
-	</div>
-	
-		@if(isset($_POST['dangNhap']))
-			{{ "Tồn Tại" }}
-		@endif
+	</div>	
 </body>
 </html>
-
-@php 
-	ob_end_flush();
-@endphp

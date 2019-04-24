@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+/*
 Route::post('post', function(){
 	echo "zo post";
 });
@@ -26,14 +26,12 @@ Route::get('goi-view', function(){
 Route::get('goi-include', function(){
 	return view('include');
 });
+*/
 
-Route::get('goi-dang-nhap', function(){
-	return view('dang-nhap/form-dang-nhap');
-});
+Route::get('goi-dang-nhap', 'ThanhVienController@dangNhap');
 
-Route::post('goi-dang-nhap', function(){
-	return view('dang-nhap/form-dang-nhap');
-});
+Route::post('goi-dang-nhap', 'ThanhVienController@xuLyDangNhap');
+
 
 
 

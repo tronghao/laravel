@@ -5,6 +5,9 @@
 	<title>Form Post</title>
 </head>
 <body>
+	@yield('top')
+	<b>FormPost</b><br/>
+
 	<form action="post" method="post">
 		{{ csrf_field() }}
 		<input type="submit" name="sb" value="Gui Post">
@@ -14,6 +17,6 @@
 		{{ "ton tai" }}
 	@else {{ "Khong ton tai" }}
 	@endif
-
+	
 </body>
 </html>
