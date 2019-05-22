@@ -1,4 +1,4 @@
-@include('form-post')
+@extends('form-post')
 @section('top')
 	{{"123"}}
 @stop

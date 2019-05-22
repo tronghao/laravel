@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,11 +11,12 @@
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
 
-/*
+
 Route::post('post', function(){
 	echo "zo post";
 });
@@ -28,9 +29,33 @@ Route::get('goi-include', function(){
 });
 */
 
-Route::get('goi-dang-nhap', 'ThanhVienController@dangNhap');
+Route::get('', 'ThanhVienController@dangNhap');
+Route::post('', 'ThanhVienController@xuLyDangNhap');
+Route::get('dang-xuat', 'ThanhVienController@dangXuat');
 
-Route::post('goi-dang-nhap', 'ThanhVienController@xuLyDangNhap');
+Route::group(['middleware'=>'user'], function(){
+	Route::group(['prefix'=>'user'], function(){
+		Route::get('home', 'UserController@home');
+	});
+});
+
+Route::group(['middleware'=>'user'], function(){
+	Route::group(['prefix'=>'admin'], function(){
+		Route::get('home','AdminController@home');
+
+		Route::get('delete-tai-khoan/{id}','AdminController@deleteAccount');
+
+		Route::get('them-tai-khoan','AdminController@addAccount');
+		Route::post('them-tai-khoan','AdminController@postAddAccount');
+
+		Route::get('edit-tai-khoan/{id}','AdminController@editAccount');
+		Route::post('edit-tai-khoan/{id}','AdminController@postEditAccount');
+	});
+});
+
+
+
+
 
 
 

@@ -14,7 +14,7 @@
 	<div class="container background col-xs-10 col-sm-6 col-md-4 col-xs-offset-2 col-sm-offset-3 col-md-offset-4"> <br />
 		<div class="title-dn">Đăng Nhập</div> <br />
 		<div class="form container">
-			<form  action="goi-dang-nhap" method="post">
+			<form  action="" method="post">
 				{{ csrf_field() }}
 				<table class="container">
 					<tr>
@@ -30,7 +30,7 @@
 					</tr>
 				</table>
 			</form>	 <br />
-			
+			<div> {{ $error or ''}} </div>
 		</div>
 	</div>	
 </body>
